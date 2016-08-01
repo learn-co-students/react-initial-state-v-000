@@ -25,8 +25,9 @@ const Toggler = React.createClass({
   render() {
     return (
       <div>
-        {React.Children.map(c =>
-          React.cloneElement(c, { ...c.props, on: this.state.on }))}
+       {React.cloneElement(
+         this.props.children,
+         { ...c.props, on: this.state.on })}
       </div>
     )
   }
@@ -48,8 +49,9 @@ class Toggler extends React.Component {
   render() {
     return (
       <div>
-        {React.Children.map(this.props.children, c =>
-          React.cloneElement(c, { ...c.props, on: this.state.on }))}
+       {React.cloneElement(
+         this.props.children,
+         { ...c.props, on: this.state.on })}
       </div>
     )
   }
