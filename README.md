@@ -100,8 +100,9 @@ class Address extends React.Component {
 }
 ```
 
-This is very, _very_ bad! There is absolutely no reason for the full address to go into our state, since we're just
-using props to 'compute' the full address. Instead, we should use the component's props directly:
+While this is all perfectly valid React code, storing computed values in your state (in this case, `fullAddress`) should
+be avoided. There's no good reason for the full address to go into our state, since we're just using props to 'compute'
+the full address. Instead, we should use the component's props directly:
 
 
 ```js
@@ -115,9 +116,9 @@ class Address extends React.Component {
 ```
 
 ## Conclusion
-While component state is a very powerful feature, it should be used as sparingly as possible. We've only defined the
-initial state here — it's not very exciting, but it's a start. Soon, we'll learn how to change the state of our
-component to make it more dynamic!
+While component state is a very powerful feature, it should be used as sparingly as possible. State is hard to manage and
+can be very easy to lose sight of. The more state we introduce in our application, the harder it will be to keep track of
+all of the changes in our data. We've only defined the initial state here — it's not very exciting, but it's a start!
 
 ## Resources
 - [Official React docs on state](https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html#components-are-just-state-machines)
