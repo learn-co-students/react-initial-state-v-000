@@ -1,5 +1,9 @@
 # React Initial State
 
+## Overview 
+
+In this lesson, we'll explain the concept of component state. 
+
 ## Objectives
 1. Explain how to define a component's initial state
 2. Explain the difference between initialState and defaultProps
