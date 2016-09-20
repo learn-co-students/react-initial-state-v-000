@@ -10,35 +10,23 @@ In this lesson, we'll explain the concept of component state.
 3. Practice defining a component's initial state
 
 ## What's state?
-Let's quickly talk about what _state_ is in React. State is basically data that is mutated in your component. Like with any
-state, this state can also **change**. That's an important part: while a component can't change its own props, it _can_
-change its state.
+Let's quickly talk about what _state_ is in React. State is basically data that is mutated in your component. Like with any state, this state can also **change**. That's an important part: while a component can't change its own props, it _can_ change its state.
 
 State is used to handle several things in your component:
 
 - Interactivity (e.g. changing data when a user clicks a button)
-- Fetching remote data (remote data is, by definition, not available right away when the component is mounted — state
-gives us a way of updating the component once that data arrives)
+- Fetching remote data (remote data is, by definition, not available right away when the component is mounted — state gives us a way of updating the component once that data arrives)
 - Reacting to the passing of time (i.e. setting an interval or timeout)
 
 ## Props vs state
-As mentioned before, it's important to know the difference between props and state. Props and state are used as input
-for the `render()` method to determine its output, but they are _not_ the same thing! The best way to figure out if data
-should go in props or state is to ask ourselves _'Will this data ever change?'_. If not, it's a prop. If it will, it
-should go in state! Keep in mind that whenever props _and/or_ state change, the component will run its `render()` method
-again.
+As mentioned before, it's important to know the difference between props and state. Props and state are used as input for the `render()` method to determine its output, but they are _not_ the same thing! The best way to figure out if data should go in props or state is to ask ourselves _'Will this data ever change?'_. If not, it's a prop. If it will, it should go in state! Keep in mind that whenever props _and/or_ state change, the component will run its `render()` method again.
 
 ## Setting initial state
 ![An old radio thing](http://support.radioshack.com/support_tutorials/communications/Images/pro2067e_init.gif)
 
-Enough talk, let's see some more code! In this lesson, we'll focus on just setting the _initial state_. Since we're just
-setting the initial state, it will remind you very much of props (since the data won't change). Keep in mind, though,
-that we're able to _change_ this state whenever we want, making for a very powerful feature for dynamic components.
+Enough talk, let's see some more code! In this lesson, we'll focus on just setting the _initial state_. Since we're just setting the initial state, it will remind you very much of props (since the data won't change). Keep in mind, though, that we're able to _change_ this state whenever we want, making for a very powerful feature for dynamic components.
 
-Let's say we have a `<ToggleButton />` component. A toggle button has an on and off state. Using props for that value
-wouldn't work, since we can't actually change our props! Let's use state for this instead. We'll assume that the
-default state of this component is to be in the _off_ state. Let's call that state property `isEnabled`. Setting the
-initial state is done in the `constructor` of our ES2015 class component:
+Let's say we have a `<ToggleButton />` component. A toggle button has an on and off state. Using props for that value wouldn't work, since we can't actually change our props! Let's use state for this instead. We'll assume that the default state of this component is to be in the _off_ state. Let's call that state property `isEnabled`. Setting the initial state is done in the `constructor` of our ES2015 class component:
 
 ```js
 class ToggleButton extends React.Component {
@@ -58,8 +46,7 @@ class ToggleButton extends React.Component {
 }
 ```
 
-If, for some reason, we were still using `React.createClass()`, we would add a method called `getInitialState()` that
-returns our state object:
+If, for some reason, we were still using `React.createClass()`, we would add a method called `getInitialState()` that returns our state object:
 
 ```js
 const ToggleButton = React.createClass({
@@ -77,14 +64,10 @@ const ToggleButton = React.createClass({
 });
 ```
 
-Our component would show 'I am toggled off.' on the screen, since the initial state has set the `isEnabled` property to
-`false`. Not very exciting yet, but we'll get there!
+Our component would show 'I am toggled off.' on the screen, since the initial state has set the `isEnabled` property to `false`. Not very exciting yet, but we'll get there!
 
 ## Minimal representation of state
-It's important to try and keep your state **as small as possible**. You should strive for a minimal amount of data in
-your state and compute the rest. For example, let's say we have a component `<Address />` that takes in two props: the
-`street` and the `city`. We'll add those two together to show the user a complete address. An example of having computed
-data in your state would be this:
+It's important to try and keep your state **as small as possible**. You should strive for a minimal amount of data in your state and compute the rest. For example, let's say we have a component `<Address />` that takes in two props: the `street` and the `city`. We'll add those two together to show the user a complete address. An example of having computed data in your state would be this:
 
 ```js
 class Address extends React.Component {
@@ -104,9 +87,7 @@ class Address extends React.Component {
 }
 ```
 
-While this is all perfectly valid React code, storing computed values in your state (in this case, `fullAddress`) should
-be avoided. There's no good reason for the full address to go into our state, since we're just using props to 'compute'
-the full address. Instead, we should use the component's props directly:
+While this is all perfectly valid React code, storing computed values in your state (in this case, `fullAddress`) should be avoided. There's no good reason for the full address to go into our state, since we're just using props to 'compute' the full address. Instead, we should use the component's props directly:
 
 
 ```js
@@ -120,9 +101,7 @@ class Address extends React.Component {
 ```
 
 ## Conclusion
-While component state is a very powerful feature, it should be used as sparingly as possible. State is hard to manage and
-can be very easy to lose sight of. The more state we introduce in our application, the harder it will be to keep track of
-all of the changes in our data. We've only defined the initial state here — it's not very exciting, but it's a start!
+While component state is a very powerful feature, it should be used as sparingly as possible. State is hard to manage and can be very easy to lose sight of. The more state we introduce in our application, the harder it will be to keep track of all of the changes in our data. We've only defined the initial state here — it's not very exciting, but it's a start!
 
 ## Resources
 - [Official React docs on state](https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html#components-are-just-state-machines)
