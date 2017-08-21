@@ -26,7 +26,7 @@ As mentioned before, it's important to know the difference between props and sta
 
 Enough talk, let's see some more code! In this lesson, we'll focus on just setting the _initial state_. Since we're just setting the initial state, it will remind you very much of props (since the data won't change). Keep in mind, though, that we're able to _change_ this state whenever we want, making for a very powerful feature for dynamic components.
 
-You can follow along by running `npm install & npm start` in your terminal. The starter code to mount the React app is in `/src/index.js`. The component files are already prepped for you to add the code in this lesson.
+You can follow along by running `npm install && npm start` in your terminal. The starter code to mount the React app is in `/src/index.js`. The component files are already prepped for you to add the code in this lesson.
 
 Let's say we have a `<ToggleButton />` component. A toggle button has an on and off state. Using props for that value wouldn't work, since we can't actually change our props! Let's use state for this instead. We'll assume that the default state of this component is to be in the _off_ state. Let's call that state property `isEnabled`. Setting the initial state is done in the `constructor` of our React Component:
 
