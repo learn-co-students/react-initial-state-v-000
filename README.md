@@ -45,7 +45,7 @@ class ToggleButton extends React.Component {
 
   render() {
     return (
-      <button classname="toggle-button">
+      <button className="toggle-button">
         I am toggled {this.state.isEnabled ? 'on' : 'off'}
       </button>
     )
@@ -112,7 +112,7 @@ import Address from './components/Address';
 ReactDOM.render(
   <Address 
     street="Santa Monica Blvd."
-    city="Santa Moncia"
+    city="Santa Monica"
   />,
   document.getElementById('root')
 );
@@ -139,4 +139,5 @@ While component state is a very powerful feature, it should be used as sparingly
 - [Props vs. state](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
 - [Props in getInitialState Is an Anti-Pattern](https://facebook.github.io/react/tips/props-in-getInitialState-as-anti-pattern.html)
 
+<p class='util--hide'>View <a href='https://learn.co/lessons/react-initial-state'>Initial State</a> on Learn.co and start learning to code for free.</p>
 <p class='util--hide'>View <a href='https://learn.co/lessons/react-initial-state'>Initial State</a> on Learn.co and start learning to code for free.</p>
