@@ -45,7 +45,7 @@ class ToggleButton extends React.Component {
 
   render() {
     return (
-      <button classname="toggle-button">
+      <button className="toggle-button">
         I am toggled {this.state.isEnabled ? 'on' : 'off'}
       </button>
     )
@@ -112,7 +112,7 @@ import Address from './components/Address';
 ReactDOM.render(
   <Address 
     street="Santa Monica Blvd."
-    city="Santa Moncia"
+    city="Santa Monica"
   />,
   document.getElementById('root')
 );
